@@ -1,303 +1,104 @@
-.main-content-wrapper{
+.main-content-wrapper {
   position: relative;
-      }
-      
-  .mv {
-    margin-top:40px;
-    margin-right:100px;
-  
-    img{
+}
+
+.mv {
+  margin-top: 40px;
+  margin-right: 100px;
+
+  img {
     width: 100%;
   }
-  }
+}
 
-  .splide{
+.splide {
+  position: relative;
+  z-index: 1001;
+  margin: 120px 100px;
+
+  .splide__slide {
     position: relative;
-    z-index: 1001;
-    margin: 0 100px;
-    margin-top:120px;
-  
-    .splide__slide {
-      position: relative;
-      height: 300px; // ← 好きな高さに調整
-      padding-bottom: 0;
-  
-    
-      iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%; // ← 高さちゃんと全部に
-        top: 0;
-        left: 0;
-        border: none;
-        z-index: 1; // ← iframeが一番下になるように
-      }
-    }
-  }
+    height: 300px;
+    padding-bottom: 0;
 
-  
-
-  .splide {
-    position: relative;
-  
-    &__pagination {
+    iframe {
       position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-  
-      &__page {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #fff;
-        opacity: 0.5;
-        transition: opacity 0.3s;
-        border: none;
-  
-        &.is-active {
-          opacity: 1;
-          background: #ff4081;
-        }
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+      z-index: 1;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+
+    &__page {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      border: none;
+
+      &.is-active {
+        opacity: 1;
+        background: #ff4081;
       }
     }
   }
-  
-  
-  //_____________________________________________________________
+}
 
 @media screen and (max-width: 1024px) {
-  .main-content-wrapper{
-    position: relative;
-        .news{
-            padding: 4rem 2rem;
-            margin-top:300px;
-            margin:100px auto;
-          
-            &__inner {
-              max-width: 800px;
-              margin: 0 auto;
-            }
-          
-            &__title {
-              font-size: 2rem;
-              font-weight: bold;
-              margin-bottom: 1rem;
-              text-align: left;
-              font-family: 'Cinzel', serif;
-            }
-        
-          
-            &__list {
-              list-style: none;
-              padding: 0;
-            }
-          
-            &__item {
-              display: flex;
-              align-items: center;
-              padding: 1rem 0;
-              border-bottom: 1px solid #ccc;
-          
-              .news__date {
-                color: #999;
-                font-size: 0.9rem;
-                min-width: 120px;
-              }
-          
-              .news__text {
-                text-decoration: none;
-                color: #333;
-                font-weight: 500;
-          
-                &:hover {
-                  text-decoration: underline;
-                  opacity: 0.7;
-                }
-              }
-            }
-          }
-          
-        }
-    .mv {
-      margin-top: 100px;
-      margin-right:0px;
-    
-      img{
-      width: 100%;
-    }
-    }
-  
-    .splide{
-      position: relative;
-      z-index: 4;
-      margin: 0 100px;
-    }
-  
+  .mv {
+    margin-top: 80px;
+    margin-right: 0;
+  }
+
+  .splide {
+    margin: 100px 20px;
+
     .splide__slide {
-      position: relative;
-      height: 300px; // ← 好きな高さに調整
-      padding-bottom: 0;
   
-    
-      iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%; // ← 高さちゃんと全部に
-        top: 0;
-        left: 0;
-        border: none;
-        z-index: 1; // ← iframeが一番下になるように
+
+      .splide__arrow {
+        margin-top: -80px;
+      }
+
+      .splide__track {
+        margin: 70px;
       }
     }
-    
-  
-    .splide {
-      position: relative;
-      margin:0 20px;
-      &__pagination {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        z-index: 10;
-    
-        &__page {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: #fff;
-          opacity: 0.5;
-          transition: opacity 0.3s;
-          border: none;
-    
-          &.is-active {
-            opacity: 1;
-            background: #ff4081;
-          }
-        }
+
+    &__pagination {
+      top: 70%; // ← ここ追加されてたけど位置調整は要確認
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mv {
+    margin-top: 100px;
+    margin-right: 0;
+  }
+
+  .splide {
+    z-index: 4;
+    margin: 0 20px;
+
+    .splide__slide {
+      iframe {
+        height: 60%; // スマホだけ高さ変更
       }
     }
   }
-
-
-  @media screen and (max-width: 600px) {
-    .main-content-wrapper{
-      position: relative;
-          .news{
-            margin:0;
-            padding:0;
-            
-              &__inner {
-                max-width: 800px;
-                margin: 0 auto;
-              }
-            
-              &__title {
-                font-size: 2rem;
-                font-weight: bold;
-                margin-bottom: 1rem;
-                text-align: center;
-                font-family: 'Cinzel', serif;
-              }
-          
-            
-              &__list {
-                list-style: none;
-                padding: 0;
-                width:70%;
-                margin:0 auto;
-                margin-bottom:30px;
-              }
-            
-              &__item {
-                display: flex;
-                align-items: center;
-                padding:0;
-                border-bottom: 1px solid #ccc;
-            
-                .news__date {
-                  color: #999;
-                  font-size: 0.9rem;
-                  min-width: 120px;
-                }
-            
-                .news__text {
-                  text-decoration: none;
-                  color: #333;
-                  font-weight: 500;
-            
-                  &:hover {
-                    text-decoration: underline;
-                    opacity: 0.7;
-                  }
-                }
-              }
-            }
-            
-          }
-      .mv {
-        margin-top:100px;
-        margin-right:0px;
-      
-        img{
-        width: 100%;
-      }
-      }
-    
-      .splide{
-        position: relative;
-        z-index: 4;
-        margin: 0 100px;
-      }
-    
-      .splide__slide {
-        position: relative;
-        height: 300px; // ← 好きな高さに調整
-        padding-bottom: 0;
-    
-      
-        iframe {
-          position: absolute;
-          width: 100%;
-          height: 60%; // ← 高さちゃんと全部に
-          top: 0;
-          left: 0;
-          border: none;
-          z-index: 1; // ← iframeが一番下になるように
-        }
-      }
-      
-    
-      .splide {
-        position: relative;
-        margin:0 20px;
-        &__pagination {
-          position: absolute;
-          bottom: 10px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          z-index: 10;
-      
-          &__page {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #fff;
-            opacity: 0.5;
-            transition: opacity 0.3s;
-            border: none;
-      
-            &.is-active {
-              opacity: 1;
-              background: #ff4081;
-            }
-          }
-        }
-      }
-    }
+}
