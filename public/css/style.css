@@ -727,46 +727,6 @@ start---------------------------------------------------------------------------
 .main-content-wrapper {
   position: relative;
 }
-.main-content-wrapper .news {
-  padding: 4rem 2rem;
-  margin-top: 300px;
-  margin: 100px auto;
-}
-.main-content-wrapper .news__inner {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.main-content-wrapper .news__title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: left;
-  font-family: "Cinzel", serif;
-}
-.main-content-wrapper .news__list {
-  list-style: none;
-  padding: 0;
-}
-.main-content-wrapper .news__item {
-  display: flex;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #ccc;
-}
-.main-content-wrapper .news__item .news__date {
-  color: #999;
-  font-size: 0.9rem;
-  min-width: 120px;
-}
-.main-content-wrapper .news__item .news__text {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.main-content-wrapper .news__item .news__text:hover {
-  text-decoration: underline;
-  opacity: 0.7;
-}
 
 .mv {
   margin-top: 40px;
