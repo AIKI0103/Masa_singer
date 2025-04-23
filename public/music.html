@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masa singer / Music</title>
+  <meta name="description" content="宮古島の海と空に包まれて歌う癒しのシンガー。ゆったりとした時間を音楽でお届けします。">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/vendors/reset.css">
+  <link rel="stylesheet" href="../css/vendors/splide.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+   
+  <!-- Body content  -->
+
+  <div class="music_wrapper">
+    <section class="hero">
+      <h1>🎶 MUSIC</h1>
+      <p>宮古島から届ける、心に響くメロディ。</p>
+    </section>
+
+
+    
+  
+    <div class="latest-release-wrapper">
+      <section class="latest-release">
+        <div class="release-card">
+          <img src=assets/images/music1.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>いちゃりばちょーでー</h3>
+            <p>Masa 2023</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-release">
+        <div class="release-card">
+          <img src=assets/images/music2.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>Life</h3>
+            <p>Masa 2022</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="latest-release">
+
+        <div class="release-card">
+          <img src=assets/images/music3.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>Day off Sunday</h3>
+            <p>Masa 2024</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+      
+      <section class="latest-release">
+        <div class="release-card">
+          <img src=assets/images/music4.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>おは yo!!</h3>
+            <p>Masa 2023</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-release">
+        <div class="release-card">
+          <img src=assets/images/music5.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>music</h3>
+            <p>Masa 2021</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-release">
+
+        <div class="release-card">
+          <img src=assets/images/music6.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>Happy Day</h3>
+            <p>Masa 2023</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-release">
+
+        <div class="release-card">
+          <img src=assets/images/music7.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>Dear...</h3>
+            <p>Masa 2021</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-release">
+
+        <div class="release-card">
+          <img src=assets/images/music8.webp alt="ジャケット画像">
+          <div class="release-info">
+            <h3>変わらないもの</h3>
+            <p>Masa 2017</p>
+            <a href="https://music.apple.com/jp/artist/masa/1273399301" id="playBtn" class="btn-link">▶︎ 試聴する</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="music_button">
+      <a href="https://music.apple.com/jp/artist/masa/1273399301"><button class="more-button">more</button></a>
+    </div>
+</div>
+  
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Common Part Loaders -->
+  <script>
+    // ヘッダー読み込み
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+    // フッター読み込み
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+
+    <!-- アニメーション系 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/SplitText.min.js"></script>
+    <script src="../js/animation-base.js"></script>
+</body>
+</html>

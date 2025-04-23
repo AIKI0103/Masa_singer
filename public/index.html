@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masa singer</title>
+  <meta name="description" content="宮古島の海と空に包まれて歌う癒しのシンガー。ゆったりとした時間を音楽でお届けします。" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/vendors/reset.css">
+  <link rel="stylesheet" href="./css/vendors/splide.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="loading">
+  <!-- Loading Screen -->
+  <!-- <div id="loading">
+    <div class="loading-text">Loading...</div>
+  </div> -->
+
+  <!-- Site Content Wrapper -->
+  <div id="site-wrapper">
+    <div id="header-placeholder"></div>
+
+    <div class="main-content-wrapper">
+      <div class="mv">
+        <img src="./assets/images/masa-main.jpg" alt="メインの画像">
+      </div>
+
+      <section class="news" id="news">
+        <div class="news__inner">
+          <h2 class="news__title">NEWS</h2>
+          <ul class="news__list">
+            <li class="news__item">
+              <span class="news__date">2025.04.19~</span>
+              <a href="#" class="news__text">2nd CDアルバム "Life is Music 各サブスクにてリリース中"</a>
+            </li>
+            <li class="news__item">
+              <span class="news__date">2025.04.27</span>
+              <a href="#" class="news__text">東京ワンマンライブ</a>
+            </li>
+            <li class="news__item">
+              <span class="news__date">2024.12.08</span>
+              <a href="#" class="news__text">宮古島300人ワンマンライブ</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- YouTube Slider -->
+    <div id="youtube-splide" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><iframe src="https://www.youtube.com/embed/F9J_xj4jLsc" allowfullscreen></iframe></li>
+          <li class="splide__slide"><iframe src="https://www.youtube.com/embed/4M-RvSITljU" allowfullscreen></iframe></li>
+          <li class="splide__slide"><iframe src="https://www.youtube.com/embed/WqPAcobo8cw" allowfullscreen></iframe></li>
+          <li class="splide__slide"><iframe src="https://www.youtube.com/embed/iOP-v1NS-Nc" allowfullscreen></iframe></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about_content">
+      <div class="about_content_title">
+        <h1>Masa</h1>
+        <img src="./assets/images/profile_1.jpg" alt="プロフィールスタジオ">
+      </div>
+      <div class="about_content_p">
+        <p>
+          シンガーソングライター<br>
+          1991年東京都葛飾区生まれ<br>
+          2020年10月〜3月の半年間 沖縄県那覇市で移住生活を送りその後、2021年4月から宮古島へ移住。<br>
+          現在は宮古島拠点で自主企画イベントなどで宮古島、那覇、東京の３拠点でライブ活動中。<br>
+          2015年に『I Stii』(アイスティル) をiTunes StoreリリースするとR&Bチャートでデイリーランキング国内１位を獲得。<br>
+          日常生活の中で感じたことや起きたことを、等身大の歌詞にのせバラードからアップテンポまで幅広く歌い上げる。<br>
+          現在はアーティスト活動以外にもボイストレーナー 、作詞作曲家など。<br>
+          その他に宮古島の海に恩返しという気持ちを込めてビーチクリーン〝ちゃんぷるー〟を立ち上げ、毎月ビーチクリーン活動をするなど幅広いジャンルで活動している。
+        </p>
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // ヘッダー読み込み
+    fetch("header.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+          // footer読み込み
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+
+
+    // ローディング終了後の処理
+    window.addEventListener("load", () => {
+      document.body.classList.remove("loading");
+      if (typeof startAnimations === "function") {
+        startAnimations();
+      }
+    });
+  </script>
+  <script src="./js/animation-base.js"></script>
+  <script src="./js/gsap.min.js"></script>
+  <script src="./js/SplitText.min.js"></script>
+  <script src="./js/loading.js"></script>
+  <script src="./js/splide.min.js"></script>
+  <script src="./js/splide-setting.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</body>
+</html>

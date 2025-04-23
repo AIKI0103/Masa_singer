@@ -1,0 +1,28 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index:999;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); // 上にうっすら影つける
+
+  .sns-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 1rem;
+
+    i {
+      font-size: 2rem;
+      color: #333;
+      transition: 0.3s;
+
+      &:hover {
+        color: #d2d2d2;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

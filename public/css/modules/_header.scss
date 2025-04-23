@@ -1,0 +1,166 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 2rem 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 2rem;
+      opacity: 1;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #333;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .nav {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 1.5rem;
+
+          a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: 0.3s;
+
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sns-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+      font-size: 1.8rem;
+      color: #333;
+      transition: 0.3s;
+
+      &:hover {
+        color: #888;
+      }
+    }
+  }
+
+  // -----------------------------
+  // ハンバーガーメニュー切り替え（iPad以下）
+  // -----------------------------
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      .logo h1{
+        margin-bottom: 0;
+      }
+      .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        overflow: hidden; // ← ここ重要！
+        max-height: 0;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0; // 初期は0
+        text-align: center;
+        transition: all 0.4s ease; // アニメーション！
+      
+        ul li {
+          margin-bottom: 1.2rem;
+        }
+      
+        &.active {
+          max-height: 500px;  // メニューの高さに応じて調整！
+          opacity: 1;
+          padding: 2rem 1rem; // 表示時に復活
+        }
+      }
+      
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        z-index: 1001;
+      
+        span {
+          display: block;
+          height: 3px;
+          background: #333;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+        }
+      
+        &.active {
+          span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+          }
+      
+          span:nth-child(2) {
+            opacity: 0;
+          }
+      
+          span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+          }
+        }
+      }
+      
+    }
+
+    .sns-icons {
+      display: none;
+    }
+  }
+}

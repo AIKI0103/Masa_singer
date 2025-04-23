@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masa singer/Contact</title>
+  <!----------------------------meta情報-------------------------------->
+  <meta name="description" content="宮古島の海と空に包まれて歌う癒しのシンガー。ゆったりとした時間を音楽でお届けします。" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./css/vendors/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/vendors/splide.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- ✅ ID名を合わせる！ -->
+  <div id="header-placeholder"></div>
+
+  <div class="contact_wrapper">
+    <div class="contact_title">
+      <h2>CONTACT</h2>
+    </div>
+
+    <form class="contact_form" id="contact-form">
+      <div class="form_group">
+        <label for="name">NAME</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form_group">
+        <label for="email">MAIL</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form_group">
+        <label for="tel">TEL</label>
+        <input type="tel" id="tel" name="tel">
+      </div>
+
+      <div class="form_group">
+        <label for="message">MESSAGE</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <div class="form_buttons">
+        <button type="submit">送信する</button>
+        <button type="reset">クリア</button>
+      </div>
+    </form>
+
+    <!-- ✅ フォームの送信結果表示 -->
+    <div id="response" style="margin-top: 20px; color: green;"></div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- 共通パーツの読み込み -->
+  <script>
+    // header読み込み
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+    // footer読み込み
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+
+    // フォーム送信処理
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("response").textContent = "";
+
+      const form = document.getElementById("contact-form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message")
+        };
+
+        try {
+          const res = await fetch("/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+
+          const result = await res.json();
+
+          form.reset(); // 入力をクリア
+          alert("送信しました！");
+          document.getElementById("response").textContent = result.message;
+        } catch (err) {
+          console.error("送信エラー:", err);
+          document.getElementById("response").textContent = "送信に失敗しました。";
+        }
+      });
+    });
+  </script>
+
+  <!-- アニメーション系 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="../js/SplitText.min.js"></script>
+  <script src="../js/animation-base.js"></script>
+</body>
+
+</html>

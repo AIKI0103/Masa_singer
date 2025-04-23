@@ -1,0 +1,16 @@
+/* 基本設定 */
+
+@import "../default/variables";
+@import "../default/font-face";
+@import "../default/global";
+
+/* modules */
+@import "./modules/loading";
+@import "./modules/header";
+@import "./modules/about";
+@import "./modules/music";
+@import "./modules/contact";
+@import "./modules/main";
+@import "./modules/footer";
+
+

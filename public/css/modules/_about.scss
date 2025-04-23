@@ -1,0 +1,143 @@
+.about_content {
+  max-width: 1000px;
+  margin: 100px auto;
+
+  .about_content_p{
+
+    text-align: left;
+      p{
+        text-align: left;
+        letter-spacing: 1.8px;
+        font-size: 32px;
+      }
+  }
+    &_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    h1 {
+      font-size: 2.625rem; // = 42px
+      text-align: center;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    margin: 8rem 0;
+
+    p {
+      font-size: 24px;       // ≒ 20px
+      line-height: 3;           // 行間を文字の3倍に
+      color: $black34-color;
+      font-weight: 300;
+    }
+  }
+}
+
+
+//_____________________________________________________________
+@media screen and (max-width: 1024px) {
+  
+  .news {
+    .news__item {
+      display: flex;
+      flex-direction: column;
+
+      .news__text {
+        font-size: 16px;
+        padding: 2px 3%;
+      }
+    }
+  }
+}
+
+.about_content{
+  .about_content_p{
+    margin-top:60px;
+    padding:80px;
+    text-align: left;
+      p{
+        font-size: 16px;
+        text-align: left;
+        letter-spacing: 2px;
+        font-weight: 200;
+      }
+  }
+}
+
+.splide__arrows {
+  position: absolute;
+  z-index: 22222222222222222;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; // ← 矢印の中身はクリック可能にするため
+
+  .splide__arrow {
+    pointer-events: auto; // ← 矢印自体はクリックできるように
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .news {
+    padding: 0px;
+    margin: 0;
+
+    .news__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .news__text {
+        font-size: 14px;
+        padding: 4px 2%;
+      }
+    }
+  }
+  .about_content{
+    margin-top:0;
+    .about_content_p{
+
+      padding: 33px;
+        p{
+          font-size: 13px;
+          padding:0;
+          text-align: left;
+        }
+    }
+  }
+
+
+  
+
+  .splide__arrows {
+    position: absolute;
+    z-index: 22222222222222224;
+    top: 30%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex
+;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+  }
+  
+
+
