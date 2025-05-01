@@ -5,6 +5,10 @@
   .about_content_p {
     text-align: left;
     margin-top:100px;
+    z-index: 9999;
+    margin-top: 100px;
+    position: relative;
+  
     p {
       text-align: left;
       letter-spacing: 1.8px;

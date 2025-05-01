@@ -297,6 +297,9 @@ start---------------------------------------------------------------------------
 .about_content .about_content_p {
   text-align: left;
   margin-top: 100px;
+  z-index: 9999;
+  margin-top: 100px;
+  position: relative;
 }
 .about_content .about_content_p p {
   text-align: left;
